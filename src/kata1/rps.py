@@ -11,11 +11,11 @@ def quienGana(player, ai):
     print("player : ", player.lower())
     print("ai : ", ai.lower())
     if player.lower() == ai.lower():
-        result = "Empate"
+        result = "Empate!"
     elif (player.lower() == "papel" and ai.lower() == "tijeras") or (player.lower() == "tijeras" and ai.lower() == "piedra"):
-        result = "Perdedor"
+        result = "Perdiste!"
     elif (player.lower() == "piedra" and ai.lower() == "tijeras") or (player.lower() == "papel" and ai.lower() == "piedra"):
-        result = "Ganador"
+        result = "Ganaste!"
     return result
 
 # Entry Point
