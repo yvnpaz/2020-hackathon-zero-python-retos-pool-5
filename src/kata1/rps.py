@@ -1,4 +1,4 @@
-from random import randint
+import random
 
 options = ["Piedra", "Papel", "Tijeras"]
 
@@ -7,17 +7,33 @@ options = ["Piedra", "Papel", "Tijeras"]
 #'Ganaste!'
 #'Perdiste!'
 def quienGana(player, ai):
-    return ""
+    
+    print("player : ", player.lower())
+    print("ai : ", ai.lower())
+    if player.lower() == ai.lower():
+        result = "Empate"
+    elif (player.lower() == "papel" and ai.lower() == "tijeras") or (player.lower() == "tijeras" and ai.lower() == "piedra"):
+        result = "Perdedor"
+    elif (player.lower() == "piedra" and ai.lower() == "tijeras") or (player.lower() == "papel" and ai.lower() == "piedra"):
+        result = "Ganador"
+    return result
 
 # Entry Point
 def Game():
     #
     #
-    
+    player = input("Introudce an option between: ""Piedra"", ""Papel"" or ""Tijeras"": ")
+
+    # Copy array
+    optionsGame = options
+
+    #Value IA
+    ai = random.choice(optionsGame)
     #
     #
-    
+    # 
     winner = quienGana(player, ai)
 
     print(winner)
 
+Game()
