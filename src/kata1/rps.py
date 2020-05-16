@@ -7,9 +7,6 @@ options = ["Piedra", "Papel", "Tijeras"]
 #'Ganaste!'
 #'Perdiste!'
 def quienGana(player, ai):
-    
-    print("player : ", player.lower())
-    print("ai : ", ai.lower())
     if player.lower() == ai.lower():
         result = "Empate!"
     elif (player.lower() == "papel" and ai.lower() == "tijeras") or (player.lower() == "tijeras" and ai.lower() == "piedra"):
@@ -20,18 +17,14 @@ def quienGana(player, ai):
 
 # Entry Point
 def Game():
-    #
-    #
-    player = input("Introudce an option between: ""Piedra"", ""Papel"" or ""Tijeras"": ")
+    player = input("Introduce an option between: Piedra, Papel or Tijeras: ")
 
     # Copy array
     optionsGame = options
 
     #Value IA
     ai = random.choice(optionsGame)
-    #
-    #
-    # 
+    
     winner = quienGana(player, ai)
 
     print(winner)
