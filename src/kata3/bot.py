@@ -34,7 +34,7 @@ def error(update, context):
 def main():
     """Inicio del Bot"""
     #Colocamos el Token creado por FatherBot
-    updater = Updater('1172138558:AAFKT22T-Sg6cTNGT7ObwtRv9U7QIzlxu9o', use_context=True)
+    updater = Updater(NEW_TOKEN, use_context=True)
 
     # Es el Registro de Comandos a través del dispartcher
     dp = updater.dispatcher
@@ -52,7 +52,7 @@ def main():
 
     # Este comando es un Trigger que se lanza cuando no hay comandos [alreves]
     #
-
+    updater.idle()
     # Y este espera al error
     dp.add_error_handler(error)
 
