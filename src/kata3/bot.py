@@ -19,13 +19,29 @@ def help(update, context):
     update.message.reply_text("Ayudame!")
 
 def mayus(update, context):
-    may = update.message.text.upper()
-    update.message.reply_text(may)
+    may = ''
+    i=0
+    try:
+        while i < len(context.args):
+            context.args[i] = context.args[i].upper()
+            may += ' '+ context.args[i]
+            i += 1
+        update.message.reply_text(str(may))
+    except (ValueError):
+        update.message.reply_text("Error____: ", ValueError)
 
 def alreves(update, context):
     """Repite el mensaje del usuario."""
-    wordReverse = update.message.text[::-1]
-    update.message.reply_text(wordReverse)
+    wordReverse = ''
+    i=0
+    try:
+        while i < len(context.args):
+            context.args[i] = context.args[i][::-1]
+            wordReverse += ' '+ context.args[i]
+            i += 1
+        update.message.reply_text(str(wordReverse))
+    except (ValueError):
+        update.message.reply_text("Error____: ", ValueError)
 
 def error(update, context):
     """Envia los errores por consola"""
@@ -52,7 +68,7 @@ def main():
 
     # Este comando es un Trigger que se lanza cuando no hay comandos [alreves]
     #
-    updater.idle()
+
     # Y este espera al error
     dp.add_error_handler(error)
 
