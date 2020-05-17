@@ -7,11 +7,15 @@ options = ["Piedra", "Papel", "Tijeras"]
 #'Ganaste!'
 #'Perdiste!'
 def quienGana(player, ai):
-    if player.lower() == ai.lower():
+    result = ''
+    player = player.capitalize()
+    print("Player: ", player)
+    print("Ai: ", ai)
+    if player == ai:
         result = "Empate!"
-    elif (player.lower() == "papel" and ai.lower() == "tijeras") or (player.lower() == "tijeras" and ai.lower() == "piedra"):
+    elif (player == "Papel" and ai == "Tijeras") or (player == "Tijeras" and ai == "Piedra"):
         result = "Perdiste!"
-    elif (player.lower() == "piedra" and ai.lower() == "tijeras") or (player.lower() == "papel" and ai.lower() == "piedra"):
+    elif (player == "Piedra" and ai== "Tijeras") or (player == "Papel" and ai == "Piedra"):
         result = "Ganaste!"
     return result
 
